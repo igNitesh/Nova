@@ -1,5 +1,5 @@
 from core.interpreter.symbol_table import SymbolTable
-from core.ast.nodes import *
+from core.ast.rootNode import *
 
 class TypeChecker:
     def __init__(self, symbol_table: SymbolTable):

@@ -1,5 +1,5 @@
 from core.interpreter.enviroment import Environment
-from core.ast.nodes import *
+from core.ast.rootNode import *
 from core.interpreter.symbol_table import SymbolTable
 
 

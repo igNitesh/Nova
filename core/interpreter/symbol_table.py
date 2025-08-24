@@ -3,10 +3,12 @@ class SymbolTable:
         self.variables = {}  # Stores variable names and types
         self.functions = {}  # Stores function names, parameters, and return types
 
-    def define_variable(self, name, type_):
+    def define_variable(self, name, type_,value_ = None):
         if name in self.variables:
             raise TypeError(f"Variable '{name}' is already defined.")
         self.variables[name] = type_
+        if value_ is not None:
+            self.variables[name] = value_
 
     def get_variable_type(self, name):
         return self.variables.get(name, None)

@@ -3,11 +3,11 @@ from typing import List, Tuple
 
 # Token types
 TOKEN_TYPES = {
-    'KEYWORD': r'\b(var|func|if|else|while|for|return)\b',
+    'KEYWORD': r'\b(int|float|boolean|string|void|break|continue|if|else|while|for|return)\b',
     'IDENTIFIER': r'\b[a-zA-Z_]\w*\b',
     'NUMBER': r'\b\d+(\.\d+)?\b',
     'STRING': r'".*?"',
-    'OPERATOR': r'==|!=|<=|>=|[+\-*/=<>]',
+    'OPERATOR': r'\+\+|--|==|!=|<=|>=|[+\-*/=<>]',
     'PUNCTUATION': r'[(),{};,]',
     'WHITESPACE': r'\s+',
     'COMMENT': r'//.*|/\*.*?\*/'
@@ -81,14 +81,14 @@ class Lexer:
 # Example usage:
 if __name__ == "__main__":
     code = """
-    var x = 10;
-    var y = 20.5;
+    int x = 10;
+    string name = "nitesh";
     if (x > y) {
         return "Hello";
     }
-    $invalid_token
+    print("hello ",nitesh);
     """
     lexer = Lexer(code)
     tokens = lexer.tokenize()
     for token in tokens:
-        print(token)
+        print(token.type)
